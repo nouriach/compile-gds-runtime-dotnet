@@ -6,8 +6,6 @@ _The walkthrough will also detail how to set-up your project to compile the sass
 
 **peer review**: Rob Marshall
 
-_The walkthrough will also detail how to set-up your project to compile the sass at runtime_
-
 ___
 
 ### Installing the correct npm packages
