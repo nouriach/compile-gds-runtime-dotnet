@@ -152,7 +152,7 @@ ___
 - Open your repo in GitHub and select the _Actions_ tab
 - Follow the prompts to set up a new .NET GitHub workflow
 - Rename the file to whatver you want
-- Ensure that the workflow runs the script within `packagee.json` (earlier on we stored the gulp task under _build_)
+- Ensure that the workflow runs the script within `package.json` (earlier on we stored the gulp task under _build_)
 ```sh
 name: .NET
 
@@ -180,7 +180,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 ```
-- In the code above the below steps will call the gulp task from within `packagee.json` and the steps will be run every time a commit is pushed to `master`
+- In the code above the below steps will call the gulp task from within `package.json` and the steps will be run every time a commit is pushed to `master`
 ```sh
     - name: Build
       run: dotnet build --no-restore
