@@ -1,9 +1,13 @@
 ## How to Import the GOV UK Design System into a .NET MVC Project
 
+_The walkthrough will also detail how to set-up your project to compile the sass at runtime_
+
+**author**: Nathan Ouriach
+
+**peer review**: Rob Marshall
 
 _The walkthrough will also detail how to set-up your project to compile the sass at runtime_
-_author: Nathan Ouriach_
-_peer review: Rob MArshall_
+
 ___
 
 ### Installing the correct npm packages
