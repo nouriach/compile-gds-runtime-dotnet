@@ -2,7 +2,8 @@
 
 
 _The walkthrough will also detail how to set-up your project to compile the sass at runtime_
-
+_author: Nathan Ouriach_
+_peer review: Rob MArshall_
 ___
 
 ### Installing the correct npm packages
@@ -74,7 +75,7 @@ ___
 - Locate your `package.json` file and add the following script
 ```sh
 "scripts" : {
-    "compile-sass" : "node-sass ~[full path from root of your project]/wwwroot/scss/main.scss [full path from root of your        project]/wwwroot/css/main.css"
+    "compile-sass" : "node-sass ~[full path from root of your project]/wwwroot/scss/main.scss [full path from root of your project]/wwwroot/css/main.css"
  } 
 ```
 - This tells the compiler to target a specific sass file and render it into a specific css file
@@ -117,8 +118,7 @@ const buildSass = () => gulp.src("wwwroot/css/*.scss")
 ```
 You will also need a function to copy over the assets from the _node_modules_ folder and place them within your _wwwroot/assets_ folder, as well as bringing over the `.js` file contents into your project's `govuk.js` file:
 ```sh
-const copyGovukAssets = () => gulp.src(["node_modules/govuk-frontend/govuk/assets/**/*"]).pipe(gulp.dest("wwwroot/assets"))
-    .on("end", () =>
+const copyGovukAssets = () => gulp.src(["node_modules/govuk-frontend/govuk/assets/**/*"]).pipe(gulp.dest("wwwroot/assets")).on("end", () =>
 	    gulp.src(["node_modules/govuk-frontend/govuk/all.js"]).pipe(rename("govuk.js")).pipe(gulp.dest("wwwroot/js/")));
 	    gulp.src(["node_modules/govuk-frontend/govuk/all.js"]).pipe(uglify()).pipe(rename("govuk.js")).pipe(gulp.dest("wwwroot/js/")));
 ```
