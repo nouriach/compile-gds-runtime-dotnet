@@ -29,7 +29,8 @@ ___
 - Inside your .NET MVC project find the _wwwroot_ folder, and then inside that create a new folder called _scss_ 
 - Then inside the new _scss_ folder create a `main.scss` file
 - Replace everything in the `main.scss` file with : `@import "node_modules/govuk-frontend/govuk/all";`
-- Now inside your _wwwroot_ folder there should be a _css_ folder, create a new css file called _main.css_ inside your `_Layout.cshtml` file you will need to add the following code to the bottom of your `<head>` element
+- Now inside your _wwwroot_ folder there should be a _css_ folder, create a new css file called `main.css` 
+- Inside your `_Layout.cshtml` file you will need to add the following code to the bottom of your `<head>` element, this will reference your new `main.css` file
 
 ```sh
   <head>
