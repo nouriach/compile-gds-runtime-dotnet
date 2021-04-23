@@ -18,7 +18,7 @@ ___
   npm install sass
   npm install dart-sass
   npm install govuk-frontend --save
-  ```
+```
     
 - Inside your Visual Studio project, open up the Package Manager Console and install the following package: `Install-Package LigerShark.WebOptimizer.Core`
 
@@ -32,7 +32,7 @@ ___
 - Now inside your _wwwroot_ folder there should be a _css_ folder, create a new css file called `main.css` 
 - Inside your `_Layout.cshtml` file you will need to add the following code to the bottom of your `<head>` element, this will reference your new `main.css` file
 
-```sh
+```html
   <head>
     //    
     <link rel-"stylesheet" href="~/main.css" />
@@ -47,7 +47,7 @@ ___
 ### Setting up the Javascript
 
 - Inside your `_Layout.cshtml` file  paste the following code into the top of your `<body>` element
-```sh
+```html
   <body>
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
     </script>
@@ -58,7 +58,7 @@ ___
 - The compile steps below will create a new `govuk.js` file
 - Import this file before the close `</body>` element inside your `Layout.cshtml` file and then run the `initAll()` function t0 initialise all the components.
 
-```sh
+```html
   <body>
       <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
       </script>
@@ -74,7 +74,7 @@ ___
 ### Compile the .sass file
 
 - Locate your `package.json` file and add the following script
-```sh
+```json
 "scripts" : {
     "compile-sass" : "dart-sass ~[full path from root of your project]/wwwroot/scss/main.scss [full path from root of your project]/wwwroot/css/main.css"
  } 
@@ -86,7 +86,7 @@ ___
 ___
 ### How to compile the sass at runtime using gulp
 - Install the following dependencies:
-```sh
+```json
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-dart-sass": "^1.0.2",
@@ -101,7 +101,7 @@ npm install gulp
 - In the root of your folder create a new file called `gulp.js` (this will exist at the same level as your `Startup.cs` file)
 - At the top of your new `gulp.js` file import the above dependencies, your code will look like the below
 
-```sh
+```js
 var sass = require("gulp-dart-sass");
 var async = require("async");
 var rename = require("gulp-rename");
@@ -111,20 +111,20 @@ var uglify = require('gulp-uglify');
 ```
 
 - You will then create a function underneath these imports that will build the sass by grabbing all of your projects `.scss` files  and directing them to your new `main.css` file. Your function will look like the below:
-```sh
+```js
 const buildSass = () => gulp.src("wwwroot/css/*.scss")
 	.pipe(sass().on("error", sass.logError))
 	.pipe(cleanCSS())
 	.pipe(gulp.dest("wwwroot/css"));
 ```
 You will also need a function to copy over the assets from the _node_modules_ folder and place them within your _wwwroot/assets_ folder, as well as bringing over the `.js` file contents into your project's `govuk.js` file:
-```sh
+```js
 const copyGovukAssets = () => gulp.src(["node_modules/govuk-frontend/govuk/assets/**/*"]).pipe(gulp.dest("wwwroot/assets")).on("end", () =>
 	    gulp.src(["node_modules/govuk-frontend/govuk/all.js"]).pipe(rename("govuk.js")).pipe(gulp.dest("wwwroot/js/")));
 	    gulp.src(["node_modules/govuk-frontend/govuk/all.js"]).pipe(uglify()).pipe(rename("govuk.js")).pipe(gulp.dest("wwwroot/js/")));
 ```
 Close your `gulp.js` file by creating a task that runs the above functions
-```sh
+```js
 gulp.task("build-fe", () => {
 	return async.series([
 		(next) => buildSass().on("end", next),
@@ -137,7 +137,7 @@ ___
 ### Add the gulp tasks to the `package.json` file to run at compile time
 - Locate your `package.json` file and add the following script 
 - By adding the below script you will be able to run the gulp task during the deployment process
-```sh
+```json
 {
     //
     "scripts": {
@@ -152,7 +152,7 @@ ___
 - Follow the prompts to set up a new .NET GitHub workflow
 - Rename the file to whatver you want
 - Ensure that the workflow runs the script within `package.json` (earlier on we stored the gulp task under _build_)
-```sh
+```yml
 name: .NET
 
 on:
@@ -180,7 +180,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 ```
 - In the code above the below steps will call the gulp task from within `package.json` and the steps will be run every time a commit is pushed to `master`
-```sh
+```yml
     - name: Build
       run: dotnet build --no-restore
   ```
