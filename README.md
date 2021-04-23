@@ -123,7 +123,6 @@ gulp.task("build-fe", () => {
 	return async.series([
 		(next) => buildSass().on("end", next),
 		(next) => copyGovukAssets().on("end", next)
-		(next) => copyGovukAssets().on("end", next),
 	])
 }); 
 ```
