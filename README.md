@@ -54,11 +54,9 @@ ___
     //
   </body>
 ``` 
-          
-- Inside your _wwwroot/js_ folder create a new file and call it `govuk.js`
-- Return to your _node_modules_ folder and navigate to the following file: `/node-modules/govuk-frontend/govuk/all.js`
-- Copy all of the content from this file and paste it into your new `govuk.js` file
-- Now import thi sfile before the close `</body>` element inside your `Layout.cshtml` file and then run the `initAll()` function t0 initialise all the components.
+
+- The compile steps below will create a new `govuk.js` file
+- Import this file before the close `</body>` element inside your `Layout.cshtml` file and then run the `initAll()` function t0 initialise all the components.
 
 ```sh
   <body>
