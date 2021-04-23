@@ -16,7 +16,7 @@ ___
 - Then install the correct dependencies by running the following commands
 ```sh
   npm install sass
-  npm install node-sass
+  npm install dart-sass
   npm install govuk-frontend --save
   ```
     
@@ -78,7 +78,7 @@ ___
 - Locate your `package.json` file and add the following script
 ```sh
 "scripts" : {
-    "compile-sass" : "node-sass ~[full path from root of your project]/wwwroot/scss/main.scss [full path from root of your project]/wwwroot/css/main.css"
+    "compile-sass" : "dart-sass ~[full path from root of your project]/wwwroot/scss/main.scss [full path from root of your project]/wwwroot/css/main.css"
  } 
 ```
 - This tells the compiler to target a specific sass file and render it into a specific css file
