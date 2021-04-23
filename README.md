@@ -84,7 +84,7 @@ ___
 - To test it has worked, select a random component from the [GOV UK Design System](https://design-system.service.gov.uk/components/) and paste the HTML into one of your `.cshtml` View files
 - Run the project and then you should see the chosen component rendered correctly
 ___
-### How to compile the sass at runtime using gulp
+### How to compile the sass using gulp
 - Install the following dependencies:
 ```json
     "gulp": "^4.0.2",
