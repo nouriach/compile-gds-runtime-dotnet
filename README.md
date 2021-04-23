@@ -22,23 +22,29 @@ ___
 ___
 ### Updating your project
 
-- Inside your .NET MVC project find the _wwwroot_ folder, and then inside that create a new folder called _scss_ 
-- Then inside the new _scss_ folder create a `main.scss` file
-- Replace everything in the `main.scss` file with : `@import "node_modules/govuk-frontend/govuk/all";`
-- Now inside your _wwwroot_ folder there should be a _css_ folder, create a new css file called `main.css` 
+- Add the following to your `.gitignore`:
+```
+# CSS files (because we're using SASS)
+*.css
+*.css.map
+
+# govuk frontend stuff
+[full path from root of your project]/wwwroot/assets
+[full path from root of your project]/wwwroot/js/govuk.js
+
+# minified js
+*.min.js
+```
+- Then inside your .NET MVC project find the `wwwroot/css` folder create a `main.scss` file
+- Add the line `@import "node_modules/govuk-frontend/govuk/all";` to `main.scss`
 - Inside your `_Layout.cshtml` file you will need to add the following code to the bottom of your `<head>` element, this will reference your new `main.css` file
 
 ```html
   <head>
-    //    
+    //
     <link rel-"stylesheet" href="~/main.css" />
   </head>
- ```
-- Inside _wwwroot_ create a new folder and call it _assets_
-- Inside your project's _node_modules_ (initiated when you ran `npm init` at the beginning) navigate to the following 
--- `/node_modules/govuk-frontend/govuk/assets/images`
--- `/node_modules/govuk-frontend/govuk/assets/fonts`
-- Copy these to folders to your clipboard and paste them into your new _wwwroot/assets_ folder
+```
 ___
 ### Setting up the Javascript
 
