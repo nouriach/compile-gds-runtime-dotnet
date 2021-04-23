@@ -130,7 +130,7 @@ You can now build the front end and copy over the assets using `npx gulp build-f
 ___
 ### Add the gulp tasks to the `package.json` file to run at compile time
 - Locate your `package.json` file and add the following script 
-- By adding the below script you will be able to run the gulp task during the deployment process
+- By adding the below script you will be able to run the gulp task with `npm run build` during the deployment process
 ```json
 {
     //
