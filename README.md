@@ -126,6 +126,7 @@ gulp.task("build-fe", () => {
 	])
 }); 
 ```
+You can now build the front end and copy over the assets using `npx gulp build-fe`.
 ___
 ### Add the gulp tasks to the `package.json` file to run at compile time
 - Locate your `package.json` file and add the following script 
