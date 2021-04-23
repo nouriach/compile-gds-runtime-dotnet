@@ -85,17 +85,9 @@ ___
 - Run the project and then you should see the chosen component rendered correctly
 ___
 ### How to compile the sass using gulp
-- Install the following dependencies:
-```json
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-dart-sass": "^1.0.2",
-    "gulp-rename": "^2.0.0",
-    "gulp-uglify": "^3.0.2",
-```
-- This can be done by running the below command
+- Install gulp and required packages:
 ```sh
-npm install gulp
+npm install gulp gulp-clean-css gulp-dart-sass gulp-rename gulp-uglify
 ```
 
 - In the root of your folder create a new file called `gulp.js` (this will exist at the same level as your `Startup.cs` file)
