@@ -19,10 +19,6 @@ ___
   npm install dart-sass
   npm install govuk-frontend --save
 ```
-    
-- Inside your Visual Studio project, open up the Package Manager Console and install the following package: `Install-Package LigerShark.WebOptimizer.Core`
-
-_[LigerShark.WebOptimizer.Core](https://libraries.io/nuget/LigerShark.WebOptimizer.Core) allows for the bundling and minification of CSS and JavaScript files at runtime._
 ___
 ### Updating your project
 
