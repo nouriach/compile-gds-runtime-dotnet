@@ -58,7 +58,7 @@ ___
 ``` 
 
 - The compile steps below will create a new `govuk.js` file
-- Import this file before the close `</body>` element inside your `Layout.cshtml` file and then run the `initAll()` function t0 initialise all the components.
+- Import this file before the close `</body>` element inside your `Layout.cshtml` file and then run the `initAll()` function to initialise all the components.
 
 ```html
   <body>
